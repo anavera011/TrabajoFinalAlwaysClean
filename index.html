@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Always Clean - Spa de Tenis | Lavado en Seco & Suscripciones en Medellín</title>
+    
+    <!-- Meta SEO & Open Graph -->  
+    <meta name="description" content="Spa especializado en limpieza de tenis en seco, restauración manual y suscripciones mensuales en Medellín. Protege tus Jordan, Yeezy y sneakers con tratamientos moleculares.">
+    <meta name="keywords" content="lavado de tenis medellin, sneaker spa, limpieza en seco calzado, restauracion jordan medellin, always clean">
+    <meta property="og:title" content="Always Clean - Spa de Tenis | Jabón en Seco para tus Tenis">
+    <meta property="og:description" content="El primer Spa de Tenis en Medellín con planes de suscripción mensual y limpieza técnica en seco sin maltratar tus pares.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0d6efd',
+                            dark: '#212529',
+                            light: '#f8f9fa',
+                            accent: '#00f2fe',
+                            cyan: '#0dcaf0'
+                        }
+                    },
+                    boxShadow: {
+                        'neon': '0 0 25px rgba(13, 110, 253, 0.3)',
+                        'glow': '0 0 15px rgba(0, 242, 254, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="antialiased selection:bg-brand-blue selection:text-white">
+
+    <!-- HEADER / NAVIGATION PERSISTENTE -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- BRAND LOGO -->
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <img src="img/LOGO ALWAYS CLEAN.jpg" alt="Logo Always Clean" class="h-12 w-auto object-contain rounded-lg">
+            </a>
+
+            <!-- DESKTOP NAVIGATION -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-300">
+                <a href="#inicio" class="hover:text-brand-blue transition-colors py-2">Inicio</a>
+                <a href="#empresa" class="hover:text-brand-blue transition-colors py-2">Quiénes Somos</a>
+                <a href="#servicios" class="hover:text-brand-blue transition-colors py-2">Servicios Técnicos</a>
+                <a href="#precios" class="hover:text-brand-blue transition-colors py-2">Planes Mensuales</a>
+                <a href="#galeria" class="hover:text-brand-blue transition-colors py-2">Portafolio</a>
+                <a href="#faq" class="hover:text-brand-blue transition-colors py-2">Preguntas</a>
+            </nav>
+
+            <!-- CTA BUTTON & MOBILE TOGGLE -->
+            <div class="flex items-center space-x-4">
+                <a href="https://wa.me/573000000000?text=Hola%20Always%20Clean,%20quiero%20cotizar%20la%20limpieza%20de%20mis%20tenis" 
+                   target="_blank" 
+                   rel="noopener"
+                   class="hidden lg:inline-flex items-center gap-2 bg-brand-blue text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-blue-600 transition-all shadow-neon hover:shadow-glow transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Agendar en WhatsApp</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" type="button" aria-label="Abrir Menú" class="md:hidden text-gray-300 hover:text-white p-2 rounded-lg focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE NAVIGATION DROPDOWN -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-dark border-b border-gray-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block py-2.5 px-3 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white font-medium">Inicio</a>
+            <a href="#empresa" class="mobile-link block py-2.5 px-3 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white font-medium">Quiénes Somos</a>
+            <a href="#servicios" class="mobile-link block py-2.5 px-3 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white font-medium">Servicios Técnicos</a>
+            <a href="#precios" class="mobile-link block py-2.5 px-3 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white font-medium">Planes Mensuales</a>
+            <a href="#galeria" class="mobile-link block py-2.5 px-3 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white font-medium">Portafolio & Evidencias</a>
+            <a href="#faq" class="mobile-link block py-2.5 px-3 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white font-medium">Preguntas Frecuentes</a>
+            <div class="pt-2">
+                <a href="https://wa.me/573000000000?text=Hola%20Always%20Clean,%20quiero%20cotizar" 
+                   target="_blank" 
+                   class="w-full flex items-center justify-center gap-2 bg-brand-blue text-white py-3 rounded-xl font-bold shadow-neon">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Agendar Servicio por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="mt-20">
+        <!-- 1. HERO SECTION -->
+        <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center hero-gradient px-4 sm:px-6 lg:px-8 py-16 overflow-hidden">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-brand-blue px-4 py-2 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider pulse-badge">
+                        <i class="fa-solid fa-bolt text-brand-blue"></i>
+                        <span>¡JABÓN EN SECO PARA TUS TENIS!</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-dark leading-tight">
+                        Cuidamos tus sneakers como la <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-cyan-500">obra de arte</span> que son.
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        No arruines tu calzado costoso con agua ni lavadoras caseras. En <strong class="text-brand-dark font-semibold">Always Clean</strong> utilizamos espumas moleculares de lavado en seco y tecnología de restauración manual en Medellín.
+                    </p>
+
+                    <!-- CTAs Grid -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#precios" class="w-full sm:w-auto px-8 py-4 bg-brand-blue text-white rounded-2xl font-bold text-lg shadow-neon hover:bg-blue-600 transition-all transform hover:-translate-y-1 text-center">
+                            Ver Planes & Suscripciones
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto px-8 py-4 bg-gray-100 text-brand-dark hover:bg-gray-200 rounded-2xl font-bold text-lg transition-all text-center flex items-center justify-center gap-2">
+                            <span>Conocer Proceso Técnico</span>
+                            <i class="fa-solid fa-arrow-down text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="pt-8 border-t border-gray-100 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-brand-dark">24-48h</p>
+                            <p class="text-xs sm:text-sm text-gray-500 font-medium">Entrega Rápida</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-brand-dark">100%</p>
+                            <p class="text-xs sm:text-sm text-gray-500 font-medium">Lavado Técnico en Seco</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-brand-dark">+1.500</p>
+                            <p class="text-xs sm:text-sm text-gray-500 font-medium">Pares Revividos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Image Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -top-6 -left-6 w-72 h-72 bg-brand-accent/20 rounded-full blur-3xl -z-10"></div>
+                        <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-brand-blue/20 rounded-full blur-3xl -z-10"></div>
+                        
+                        <div class="bg-brand-dark text-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-800 space-y-6">
+                            <div class="flex items-center justify-between">
+                                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-bold px-3 py-1 rounded-full uppercase">
+                                    <i class="fa-solid fa-circle text-[8px] mr-1"></i> Servicio Estrella
+                                </span>
+                                <span class="text-xs text-gray-400">Sede La Candelaria</span>
+                            </div>
+                            
+                            <!-- IMAGEN 1: HERO PRINCIPAL DE TENIS -->
+                            <div class="py-2 flex justify-center h-52 overflow-hidden rounded-2xl relative group">
+                                <img src="img/hero.jpeg" 
+                                     alt="Limpieza de Tenis Always Clean" 
+                                     class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
+                                     onerror="this.src='https://placehold.co/600x400/0d6efd/ffffff?text=FOTO:+img/hero-sneaker.jpg'">
+                            </div>
+
+                            <div class="space-y-2 text-center">
+                                <h3 class="text-xl font-bold text-white">Plan Mediano (Restauración Total)</h3>
+                                <p class="text-xs text-gray-400">Lavado profundo moleculares + remoción de manchas difíciles + acabado desodorizante.</p>
+                            </div>
+
+                            <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-gray-400 block">Tarifa Individual</span>
+                                    <span class="text-2xl font-extrabold text-white">$15.000 <span class="text-xs font-normal text-gray-400">COP</span></span>
+                                </div>
+                                <a href="#precios" class="px-4 py-2 bg-brand-blue text-white text-sm font-bold rounded-xl hover:bg-blue-600 transition-colors">
+                                    Adquirir Plan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. QUIÉNES SOMOS -->
+        <section id="empresa" class="py-20 bg-brand-light border-y border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                    <h2 class="text-xs font-extrabold text-brand-blue uppercase tracking-widest">Nuestra Historia & Misión</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-brand-dark">Nacidos por y para los amantes de los Sneakers</p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Fundado en octubre de 2026 en Medellín por <strong class="text-brand-dark">Stiven Castaño Pérez</strong>, Always Clean nació tras identificar un gran vacío: la gente invierte en tenis costosos pero las lavanderías tradicionales o lavadoras caseras destruyen materiales delicados como gamuza, ante o mallas.
+                    </p>
+                </div>
+
+                <!-- 3 Pillars Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 card-hover-effect space-y-4">
+                        <div class="w-14 h-14 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark">Misión Técnico-Sostenible</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Brindar un servicio de limpieza y restauración de la más alta calidad, devolviendo a cada par su aspecto original. Prolongamos la vida útil de tus tenis favoritos promoviendo la sostenibilidad.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 card-hover-effect space-y-4 border-l-4 border-l-brand-blue">
+                        <div class="w-14 h-14 bg-cyan-50 text-cyan-600 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-droplet-slash"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark">Tecnología Lavado en Seco</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Usamos <strong>espumas moleculares especializadas</strong> que remueven mugre profunda sin alterar costuras ni amarillar suelas por inmersión en agua.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 card-hover-effect space-y-4">
+                        <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-repeat"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark">Primer Modelo de Suscripción</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Pioneros en Medellín en ofrecer tarifas planas mensuales. Olvídate de pagar por par suelto y mantén tu rotación semanal impecable.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Ubicación & Horario -->
+                <div class="mt-16 bg-brand-dark text-white rounded-3xl p-8 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center shadow-xl">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 text-cyan-400 font-bold text-xs uppercase tracking-wider">
+                            <i class="fa-solid fa-location-dot"></i> Sede Física Oficial
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold">Ubicación Estratégica en Medellín</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Nos encontramos ubicados en <strong>La Candelaria - Medellín, Colombia</strong>. Puedes traer tus pares directamente a nuestras instalaciones o solicitar recogida con mensajería rápida.
+                        </p>
+                    </div>
+                    <div class="bg-gray-800/80 p-6 rounded-2xl border border-gray-700 space-y-3">
+                        <h4 class="font-bold text-white text-base flex items-center gap-2">
+                            <i class="fa-regular fa-clock text-brand-blue"></i> Horarios de Atención
+                        </h4>
+                        <ul class="text-sm space-y-2 text-gray-300">
+                            <li class="flex justify-between border-b border-gray-700 pb-2">
+                                <span>Lunes a Viernes:</span>
+                                <span class="font-bold text-white">8:00 a. m. - 6:00 p. m.</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Sábados:</span>
+                                <span class="font-bold text-white">9:00 a. m. - 1:00 p. m.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. SERVICIOS TÉCNICOS -->
+        <section id="servicios" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div>
+                        <h2 class="text-xs font-extrabold text-brand-blue uppercase tracking-widest">Catálogo Especializado</h2>
+                        <p class="text-3xl sm:text-4xl font-extrabold text-brand-dark">Tratamientos para cada tipo de Sneakers</p>
+                    </div>
+                    <p class="text-gray-500 max-w-md text-sm">
+                        Cada material requiere un protocolo técnico distinto. Atendemos Gamuza, Ante, Nubuck, Cuero, Mallas técnicas y Knit.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-6 rounded-3xl bg-brand-light border border-gray-200/80 card-hover-effect flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl shadow-md">
+                                <i class="fa-solid fa-wind"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark">Lavado Express en Seco</h3>
+                            <p class="text-sm text-gray-600">Espuma activa de extracción rápida. Remueve suciedad superficial en capellada y lengüeta.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between text-xs font-bold text-brand-blue">
+                            <span>ENTREGA 24 Horas</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-brand-light border border-gray-200/80 card-hover-effect flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl shadow-md">
+                                <i class="fa-solid fa-soap"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark">Limpieza Profunda & Desmanchado</h3>
+                            <p class="text-sm text-gray-600">Cepillos de pelo de caballo suave para manchas difíciles de grasa, barro o fricción en entresuelas.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between text-xs font-bold text-brand-blue">
+                            <span>SERVICIO INSIGNIA</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-brand-light border border-gray-200/80 card-hover-effect flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl shadow-md">
+                                <i class="fa-solid fa-shield-virus"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark">Desodorización por Ozono</h3>
+                            <p class="text-sm text-gray-600">Cámara técnica de gas ozono que elimina bacterias y hongos causantes de mal olor en plantillas.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between text-xs font-bold text-brand-blue">
+                            <span>ANTI-BACTERIAL</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. TARIFAS Y SUSCRIPCIONES -->
+        <section id="precios" class="py-20 bg-brand-dark text-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                    <span class="bg-blue-500/10 text-cyan-400 border border-cyan-500/30 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
+                        Modelo Disruptivo de Suscripciones
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Elige tu Plan Always Clean</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                    <!-- Plan 1 -->
+                    <div class="bg-gray-900/90 rounded-3xl p-8 border border-gray-800 flex flex-col justify-between card-hover-effect">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Plan Gratis / Valoración</h3>
+                                <div class="mt-4 flex items-baseline">
+                                    <span class="text-4xl font-extrabold text-white">$0</span>
+                                    <span class="text-gray-400 ml-2 text-sm">COP / Consulta</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-400">Diagnóstico técnico presencial o por foto sin costo para analizar los materiales.</p>
+                        </div>
+                        <div class="mt-8">
+                            <a href="https://wa.me/573000000000?text=Plan%20Gratis" target="_blank" class="w-full py-3.5 bg-gray-800 hover:bg-gray-700 text-white rounded-xl font-bold text-sm text-center block">Solicitar Valoración</a>
+                        </div>
+                    </div>
+
+                    <!-- Plan 2 -->
+                    <div class="bg-gradient-to-b from-gray-900 to-blue-950/60 rounded-3xl p-8 border-2 border-brand-blue flex flex-col justify-between card-hover-effect relative shadow-neon">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-blue text-white px-4 py-1 rounded-full text-xs font-extrabold uppercase">MÁS VENDIDO ★ INSIGNIA</div>
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Plan Mediano</h3>
+                                <div class="mt-4 flex items-baseline">
+                                    <span class="text-4xl font-extrabold text-white">$15.000</span>
+                                    <span class="text-cyan-400 ml-2 text-sm">COP / por par</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-300">Excelente relación costo-beneficio para el calzado del uso diario.</p>
+                        </div>
+                        <div class="mt-8">
+                            <a href="https://wa.me/573000000000?text=Plan%20Mediano" target="_blank" class="w-full py-4 bg-brand-blue hover:bg-blue-600 text-white rounded-xl font-extrabold text-sm text-center block shadow-neon">Adquirir Plan Mediano</a>
+                        </div>
+                    </div>
+
+                    <!-- Plan 3 -->
+                    <div class="bg-gray-900/90 rounded-3xl p-8 border border-gray-800 flex flex-col justify-between card-hover-effect">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Plan Máximo</h3>
+                                <div class="mt-4 flex items-baseline">
+                                    <span class="text-4xl font-extrabold text-white">$35.000</span>
+                                    <span class="text-gray-400 ml-2 text-sm">COP / por par</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-400">Protocolo completo VIP con retoque manual de color y nano-protección.</p>
+                        </div>
+                        <div class="mt-8">
+                            <a href="https://wa.me/573000000000?text=Plan%20Maximo" target="_blank" class="w-full py-3.5 bg-gray-800 hover:bg-gray-700 text-white rounded-xl font-bold text-sm text-center block">Adquirir Plan Máximo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PORTAFOLIO Y EVIDENCIAS DE IMÁGENES -->
+        <section id="galeria" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-xs font-extrabold text-brand-blue uppercase tracking-widest">Transformaciones Reales</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-brand-dark">Evidencias "Antes y Después"</p>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- IMAGEN 2: CASO JORDAN GAMUZA -->
+                    <div class="bg-brand-light rounded-3xl overflow-hidden border border-gray-200 card-hover-effect">
+                        <div class="relative bg-gray-900 overflow-hidden flex items-center justify-center text-white h-64 group">
+                            <div class="absolute top-4 left-4 z-10 flex gap-2">
+                                <span class="bg-red-500/80 text-white text-[10px] px-2 py-1 rounded font-bold shadow">ANTES: Manchas</span>
+                                <span class="bg-emerald-500/80 text-white text-[10px] px-2 py-1 rounded font-bold shadow">DESPUÉS: Gamuza Viva</span>
+                            </div>
+                            <!-- IMAGEN REEMPLAZABLE: img/jordan-gamuza.jpg -->
+                            <img src="img/antesydespuesgamuza.jpeg" 
+                                 alt="Antes y después Air Jordan Gamuza" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/212529/00f2fe?text=FOTO:+img/jordan-gamuza.jpg'">
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h3 class="font-bold text-brand-dark text-lg">Restauración de Gamuza Jordan</h3>
+                            <p class="text-xs text-gray-600">Tratamiento con espuma molecular y cepillado unidireccional de ante.</p>
+                        </div>
+                    </div>
+
+                    <!-- IMAGEN 3: CASO YEEZY / SUELA AMARILLA -->
+                    <div class="bg-brand-light rounded-3xl overflow-hidden border border-gray-200 card-hover-effect">
+                        <div class="relative bg-gray-900 overflow-hidden flex items-center justify-center text-white h-64 group">
+                            <div class="absolute top-4 left-4 z-10 flex gap-2">
+                                <span class="bg-red-500/80 text-white text-[10px] px-2 py-1 rounded font-bold shadow">ANTES: Suela Amarilla</span>
+                                <span class="bg-emerald-500/80 text-white text-[10px] px-2 py-1 rounded font-bold shadow">DESPUÉS: Blanqueado Boost</span>
+                            </div>
+                            <!-- IMAGEN REEMPLAZABLE: img/yeezy-antes-despues.jpg -->
+                            <img src="img/antesydespues1.jpeg" 
+                                 alt="Antes y después desamarillado Yeezy" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/212529/0d6efd?text=FOTO:+img/yeezy-antes-despues.jpg'">
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h3 class="font-bold text-brand-dark text-lg">Desamarillado & Lavado Boost</h3>
+                            <p class="text-xs text-gray-600">Remoción de oxidación en suela transparente y lavado suave en tejido Primeknit.</p>
+                        </div>
+                    </div>
+
+                    <!-- IMAGEN 4: INSTALACIONES / SEDE -->
+                    <div class="bg-brand-light rounded-3xl overflow-hidden border border-gray-200 card-hover-effect">
+                        <div class="relative bg-gray-900 overflow-hidden flex items-center justify-center text-white h-64 group">
+                            <div class="absolute top-4 left-4 z-10">
+                                <span class="bg-brand-blue/90 text-white text-[10px] px-2.5 py-1 rounded font-bold uppercase shadow">Sede La Candelaria</span>
+                            </div>
+                            <!-- IMAGEN REEMPLAZABLE: img/instalaciones-sede.jpg -->
+                            <img src="img/sitio.jpg" 
+                                 alt="Instalaciones Sede Always Clean" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/212529/ffffff?text=FOTO:+img/instalaciones-sede.jpg'">
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h3 class="font-bold text-brand-dark text-lg">Instalaciones del Spa de Tenis</h3>
+                            <p class="text-xs text-gray-600">Laboratorio técnico de limpieza manual equipado con cepillería de precisión.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. CONTACTO -->
+        <section id="contacto" class="py-20 bg-brand-light border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-5 space-y-6">
+                        <h2 class="text-3xl font-extrabold text-brand-dark">¿Listo para revivir tus tenis?</h2>
+                        <p class="text-gray-600 text-sm">Completa el formulario para agendar la recogida de tus pares en Medellín.</p>
+                    </div>
+
+                    <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-gray-200 shadow-sm">
+                        <form id="contactForm" class="space-y-4">
+                            <div id="formAlert" class="hidden p-4 rounded-xl text-sm font-semibold"></div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 mb-1" for="name">Nombre Completo</label>
+                                    <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm" placeholder="Ej: Camilo Pérez">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 mb-1" for="phone">Teléfono / WhatsApp</label>
+                                    <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm" placeholder="Ej: 300 123 4567">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 mb-1" for="plan">Plan de Interés</label>
+                                    <select id="plan" class="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm bg-white">
+                                        <option value="mediano">Plan Mediano ($15.000 COP)</option>
+                                        <option value="maximo">Plan Máximo ($35.000 COP)</option>
+                                        <option value="gratis">Plan Gratis (Valoración)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 mb-1" for="qty">Cantidad de Pares</label>
+                                    <input type="number" id="qty" min="1" value="1" class="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1" for="notes">Detalles del Calzado</label>
+                                <textarea id="notes" rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm" placeholder="Jordan 1 de gamuza con manchas..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-brand-blue hover:bg-blue-600 text-white font-extrabold rounded-xl shadow-neon text-sm uppercase">Enviar Solicitud por WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-white py-12 border-t border-gray-800 text-center text-xs text-gray-500">
+        <p>© 2026 Always Clean - Spa de Tenis. Medellín, Colombia.</p>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/573000000000?text=Hola%20Always%20Clean" target="_blank" aria-label="Contactar por WhatsApp" class="fixed bottom-6 right-6 z-40 bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-emerald-600 transition-all">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- BOTÓN REGRESAR ARRIBA -->
+    <button id="scrollTopBtn" class="hidden fixed bottom-6 left-6 z-40 bg-brand-dark text-white border border-gray-700 w-12 h-12 rounded-full flex items-center justify-center shadow-md">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+```
+
